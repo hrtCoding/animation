@@ -1,0 +1,86 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background: #102626;
+}
+.container{
+    position: relative;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    -webkit-box-reflect: below 1px linear-gradient(#0001,0004);
+}
+.animation{
+    position: relative;
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    background: #0D2323;
+    animation:animate 2s linear infinite;
+}
+@keyframes animate{
+    0%{
+         transform: rotate(0deg);
+    }
+    100%{
+        transform: rotate(360deg);
+    }
+}
+.animation::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 50%;
+    height: 100%;
+    background: linear-gradient(to top,transparent,rgb(54, 202, 199));
+        background-repeat: repeat;
+        background-size: auto;
+    background-size: 100px 100px;
+    background-repeat: no-repeat;
+    border-top-left-radius: 100px;
+    border-bottom-left-radius: 100px;
+
+}
+.animation::after{
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translate(-50%);
+    width: 20px;
+    height: 20px;
+    background: rgb(0, 255, 251);
+    border-radius: 50%;
+    z-index: 10;
+    box-shadow: 0 0 10px rgb(54, 202, 199),
+    0 0 20px rgb(54, 202, 199),
+    0 0 30px rgb(54, 202, 199),
+    0 0 40px rgb(54, 202, 199),
+    0 0 50px rgb(54, 202, 199),
+    0 0 60px rgb(54, 202, 199),
+    0 0 70px rgb(54, 202, 199),
+    0 0 80px  rgb(54, 202, 199),
+    0 0 90px rgb(54, 202, 199),
+    0 0 100px rgb(54, 202, 199);
+
+}
+span{
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    right: 20px;
+    bottom: 20px;
+    background: #102626;
+    border-radius: 50%;
+
+}
+
